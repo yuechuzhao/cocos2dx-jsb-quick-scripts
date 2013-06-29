@@ -4,14 +4,14 @@
 用来自动编译
 '''
 #!/bin/bash
-# TODO PROJECT_NAME由参数获得
-#PROJECT_NAME=popPlanetsCh
+# 以下是shell脚本，复制下来也可以一样用
+#PROJECT_NAME=xxx
 #PROJECT_ROOT=${COCOS2DX_ROOT}/projects/${PROJECT_NAME}
 
 #if [ -d $PROJECT_ROOT ];
 #then
     ## do make bytes
-    #python ${COCOS2DX_CONSOLE_ROOT}/cocos2d.py jscompile -d ${PROJECT_ROOT}/Published-iOS -s ${COCOS2DX_ROOT}/scripting/javascript/bindings/js -s ${PROJECT_ROOT}/Resources/js -j ${PROJECT_ROOT}/tool-scripts/compiler_config_${PROJECT_NAME}.json -c
+    #python ${COCOS2DX_CONSOLE_ROOT}/cocos2d.py jscompile -d ${PROJECT_ROOT}/Published-iOS -s ${COCOS2DX_ROOT}/scripting/javascript/bindings/js -s ${PROJECT_ROOT}/Resources/js -j ${PROJECT_ROOT}/ScriptOutConf/compiler_config_${PROJECT_NAME}.json -c
 
     ## do copy
     #cp -r -f ${PROJECT_ROOT}/Published-iOS/game.min.jsc ${PROJECT_ROOT}/Published-Android
