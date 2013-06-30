@@ -67,9 +67,9 @@ def do_cocos2d_jsc_compile(project_name):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) == 1 or sys.argv[1] == "-h":
+    if len(sys.argv) == 1 or sys.argv[1] != "-c":
         print '''
-        This is a command line tools for use cocos2d-console to compile
+        This is a command line tool for use cocos2d-console to compile
         -usage:
         --help: -h
         --compile: python compile_jsc.py -c -project_name
@@ -79,6 +79,6 @@ if __name__ == "__main__":
         Resources/js --Your js files should be here
         ScriptOutConf/compiler_config_projectName.json -- You compile json file should be here
         '''
-    elif sys.argv[1] == "-c": 
+    elif sys.argv[1] == "-c" and len(sys.argv) == 3: 
         project_name = sys.argv[2]
         do_cocos2d_jsc_compile(project_name)
