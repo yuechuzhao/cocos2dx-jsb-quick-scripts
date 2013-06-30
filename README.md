@@ -1,5 +1,7 @@
 #cocos2dx-jsbinding-quick-scripts
 这里是osx下cocos2dx-jsbinding用的一些脚本，快捷的调用一些官方的工具，做东西稍微方便一点。以下全是在mac下写的，其他系统没测试过，反正改起来应该也很简单。
+##compile_jsc_then_pos_deal
+这个用来快捷的编译jsc，并且做一些后期处理工作，比如去掉原有的js，并且复制一些ios，android专门需要的文件进去。
 
 ##使用前需要做的准备
 ###1.设置环境变量
