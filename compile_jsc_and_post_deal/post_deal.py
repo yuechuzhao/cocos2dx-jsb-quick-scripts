@@ -28,38 +28,43 @@ def del_file_by_reg_and_name_list(root, reglist, current_name_list):
 def deal_after_compile_jsc(project_name):
     cocos2dx_root = os.environ.get("COCOS2DX_ROOT")
     config_file = "%s/projects/%s/ScriptOutConf/post_deal_%s.json" % (cocos2dx_root, project_name, project_name)
-    print config_file
     json_conf = open(config_file, "r")
     deal_list = json.load(json_conf)
     project_root = "/".join([os.environ.get("COCOS2DX_ROOT"), "projects", project_name])
-    proj_ios_root = "/".join([project_root, "Published-iOS"])
-    proj_android_root = "/".join([project_root, "Published-Android"])
-    # 先删除文件夹
-    # TODO 错误处理
-    for path in deal_list["del_dirs"]:
-        del_dir = proj_ios_root + "/" + path
-        if os.path.exists(del_dir): shutil.rmtree(del_dir)
-        del_dir = proj_android_root + "/" + path
-        if os.path.exists(del_dir): shutil.rmtree(del_dir)
-    print "deleted required share files!"
-    
-    platforms = ["ios", "android"]
-    for i in xrange(len(platforms)):
-        platform = platforms[i]
-        proj_platform_root = [proj_ios_root, proj_android_root][i]
-        # 删除符合要求的文件
-        del_file_by_reg_and_name_list(proj_platform_root, deal_list["del_files_by_re"], deal_list["del_files_%s" % platform])
-        print "deleted required %s files!" % platform
-    
-        # 再复制
-        print "Copy required resource files:"
-        for path, dirnames, filenames in os.walk(deal_list["copy_files_dir_%s" % platform]):
-            for dir_name in dirnames:
-                dst_dir = os.path.join(proj_platform_root, dir_name)
-                #print "dst %s" % dst_dir
-                if os.path.exists(dst_dir): os.rmdir(dst_dir)
-                shutil.copy(os.path.join(path, dir_name), proj_platform_root)
-        print "%s copy completed!" % platform
+    if not os.path.exists(cocos2dx_root):
+        print "cocos2d root not exist"
+    #判断是否存在这个root
+    elif not os.path.exists(project_root):
+        print "Project not exists"
+    else:
+        proj_ios_root = "/".join([project_root, "Published-iOS"])
+        proj_android_root = "/".join([project_root, "Published-Android"])
+        # 先删除文件夹
+        # TODO 错误处理
+        for path in deal_list["del_dirs"]:
+            del_dir = proj_ios_root + "/" + path
+            if os.path.exists(del_dir): shutil.rmtree(del_dir)
+            del_dir = proj_android_root + "/" + path
+            if os.path.exists(del_dir): shutil.rmtree(del_dir)
+        print "deleted required share files!"
+        
+        platforms = ["ios", "android"]
+        for i in xrange(len(platforms)):
+            platform = platforms[i]
+            proj_platform_root = [proj_ios_root, proj_android_root][i]
+            # 删除符合要求的文件
+            del_file_by_reg_and_name_list(proj_platform_root, deal_list["del_files_by_re"], deal_list["del_files_%s" % platform])
+            print "deleted required %s files!" % platform
+        
+            # 再复制
+            print "Copy required resource files:"
+            for path, dirnames, filenames in os.walk(deal_list["copy_files_dir_%s" % platform]):
+                for dir_name in dirnames:
+                    dst_dir = os.path.join(proj_platform_root, dir_name)
+                    #print "dst %s" % dst_dir
+                    if os.path.exists(dst_dir): os.rmdir(dst_dir)
+                    shutil.copy(os.path.join(path, dir_name), proj_platform_root)
+            print "%s copy completed!" % platform
 
 
 if __name__ == "__main__":
