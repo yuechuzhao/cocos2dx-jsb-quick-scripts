@@ -8,7 +8,9 @@
 export COCOS2DX_ROOT=/Users/Orca/develop/cocos2d-x
 ```
 ###2.按照以下方式设置工程文件夹
-图暂缺
+如图
+![js](./images/Resource.png)
+![confs](./images/ScriptOufConf.png)
 ###3.调用工具
 
 ####compile_jsc.py
