@@ -58,12 +58,20 @@ def deal_after_compile_jsc(project_name):
         
             # 再复制
             print "Copy required resource files:"
-            for path, dirnames, filenames in os.walk(deal_list["copy_files_dir_%s" % platform]):
+            src_dir = os.path.join(project_root, deal_list["copy_files_dir_%s" % platform])
+            print "Src: %s" % src_dir
+            for path, dirnames, filenames in os.walk(src_dir):
                 for dir_name in dirnames:
                     dst_dir = os.path.join(proj_platform_root, dir_name)
-                    #print "dst %s" % dst_dir
+                    print "dst dir: %s" % dst_dir
                     if os.path.exists(dst_dir): os.rmdir(dst_dir)
                     shutil.copy(os.path.join(path, dir_name), proj_platform_root)
+                for filename in filenames:
+                    dst_file = os.path.join(proj_platform_root, filename)
+                    print "dst file %s" % dst_file
+                    if os.path.isfile(dst_file): os.remove(dst_file)
+                    shutil.copy(os.path.join(path, filename), proj_platform_root)
+
             print "%s copy completed!" % platform
 
 
