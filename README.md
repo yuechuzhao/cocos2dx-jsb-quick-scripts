@@ -10,10 +10,9 @@ export COCOS2DX_ROOT=/Users/Orca/develop/cocos2d-x
 ###2.按照以下方式设置工程文件夹
 如图
 
-![js](http://github.com/yuechuzhao/cocos2dx-jsb-quick-scripts/raw/master/images/Resource.png)
+![js](https://github.com/yuechuzhao/cocos2dx-jsb-quick-scripts/tree/master/compile_jsc_and_post_deal/images/Resource.png)
 
-![confs](http://github.com/yuechuzhao/cocos2dx-jsb-quick-
-scripts/raw/master/images/ScriptOufConf.png)
+![confs](https://github.com/yuechuzhao/cocos2dx-jsb-quick-scripts/tree/master/compile_jsc_and_post_deal/images/ScriptOufConf.png)
 
 ###3.调用工具
 
