@@ -74,10 +74,16 @@ if __name__ == "__main__":
         --help: -h
         --compile: python compile_jsc.py -c -project_name
         You should set dirs like this:
-        project_root/Published-Android
-        project_root/Published-iOS
-        Resources/js --Your js files should be here
-        ScriptOutConf/compiler_config_projectName.json -- You compile json file should be here
+        
+        +cocos2dx_root
+        -+project_root
+        --+published-iOS
+        --+published-Android
+        --+Resources
+        ---+js --Your js files should be here
+        --+ScriptOutConf
+        ---+compiler_config_${projectName}.json -- You compile json file should be here
+        
         '''
     elif sys.argv[1] == "-c" and len(sys.argv) == 3: 
         project_name = sys.argv[2]
