@@ -1,0 +1,26 @@
+{
+    "del_dirs":
+    [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+    ],
+    "del_files_by_re":
+    [
+        "^.*\\.js$"
+    ],
+    "del_files_ios":
+    [
+        "ui.png",
+        "ui.plist",
+    ],
+    "del_files_android":
+    [
+        "ui.png",
+        "ui.plist",
+    ],
+    "copy_files_dir_ios": "Res-mobile",
+    "copy_files_dir_android": "Res-mobile"
+}
