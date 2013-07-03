@@ -37,7 +37,7 @@ def do_cocos2d_jsc_compile(project_name):
         else:
             # 直接运行命令。不用python调用，那样会需要去看源代码
             js_binding_path = "%s/scripting/javascript/bindings/js" % cocos2dx_root
-            src_path = "%s/Resources/js" % project_root
+            src_path = "%s/Resources" % project_root
             dst_path_ios = "%s/Published-iOS" % project_root
             dst_path_android = "%s/Published-Android" % project_root
             config_file = "%s/ScriptOutConf/compiler_config_%s.json" % (project_root, project_name)
