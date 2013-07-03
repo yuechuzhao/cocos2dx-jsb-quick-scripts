@@ -27,7 +27,7 @@ def del_file_by_reg_and_name_list(root, reglist, current_name_list):
 
 def deal_after_compile_jsc(project_name):
     cocos2dx_root = os.environ.get("COCOS2DX_ROOT")
-    config_file = "%s/projects/%s/ScriptOutConf/post_deal_%s.json" % (cocos2dx_root, project_name, project_name)
+    config_file = "%s/projects/%s/ScriptOutConf/post_deal_config.json" % (cocos2dx_root, project_name)
     json_conf = open(config_file, "r")
     deal_list = json.load(json_conf)
     project_root = "/".join([os.environ.get("COCOS2DX_ROOT"), "projects", project_name])

@@ -40,7 +40,7 @@ def do_cocos2d_jsc_compile(project_name):
             src_path = "%s/Resources" % project_root
             dst_path_ios = "%s/Published-iOS" % project_root
             dst_path_android = "%s/Published-Android" % project_root
-            config_file = "%s/ScriptOutConf/compiler_config_%s.json" % (project_root, project_name)
+            config_file = "%s/ScriptOutConf/compiler_config.json" % (project_root)
             
             # 检查是否存在
             args_names = ["js_binding_path", "src_path", "dst_path_ios", "dst_path_android", "config_file"]
