@@ -95,4 +95,4 @@ if __name__ == "__main__":
     elif sys.argv[1] == "-d" and len(sys.argv) == 3: 
         project_name = sys.argv[2]
         #deal_after_compile_jsc(project_name)
-        deal_after_compile_jsc("popPlanetsCh")
+        deal_after_compile_jsc(project_name)
