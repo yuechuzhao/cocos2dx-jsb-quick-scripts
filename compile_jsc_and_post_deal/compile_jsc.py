@@ -55,6 +55,7 @@ def do_cocos2d_jsc_compile(project_name):
             # 命令
             custom_command = "python %s/cocos2d.py jscompile -d %s -s %s -s %s -j %s -c" % (cocos2dx_console_root,
                     dst_path_ios, js_binding_path, src_path, config_file)
+            print "called: %s" % custom_command
             import subprocess
             subprocess.call(custom_command, shell=True)
 
